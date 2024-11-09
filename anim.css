@@ -1,0 +1,175 @@
+/* general usage */
+
+.no-flash {
+   filter:invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%);
+   transition: filter 50ms ease-in;
+
+}
+
+.flash-red {
+    filter: invert(113%) sepia(127%) saturate(7192%) hue-rotate(10deg) brightness(200%) contrast(118%);
+    transition: filter 50ms ease-out;
+}
+
+.flash-white {
+    filter:invert(50%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(2000%) contrast(100%);
+    transition: filter 50ms ease-in;
+}
+
+
+.deathdiv {
+    position: absolute;
+    width: 800px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    left: 240px;
+}
+.deathp {
+    text-align: center;
+    font-size:80px;
+    color:red;
+    font-family: impact, sans serif;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+}
+
+/* character */
+
+#penguin-normal {
+    background: url(images/penguinfly.png);
+    width:84px;
+    height:54px;  
+    background-position-y: 0px;
+    animation: penguinflyanim 400ms steps(2) infinite;
+}
+
+#penguin-boost {
+    background: url(images/penguinboost.png);
+    width:84px;
+    height:54px;  
+    background-position-y: 0px;
+    animation: penguinflyanim 100ms steps(2) infinite;
+}
+
+#penguin-hurt {
+    background: url(images/penguinhurt.png);
+    width:84px;
+    height:54px;  
+    background-position-y: 0px;
+    animation: penguinhurtanim 800ms steps(4) 1;
+}
+
+#penguin-hearts {
+    background: url(images/penguinheart.png) repeat;
+    width:192px;
+    height:50px; 
+}
+
+
+/* background */
+
+#background1 {
+    animation: background1scroll 30s infinite linear;
+}
+#backgroundx {
+    animation: backgroundxscroll 90s infinite linear;
+}
+#background2 {
+    animation: background2scroll 10s infinite linear;
+}
+#background3 {
+    animation: background3scroll 3s infinite linear;
+}
+
+
+@keyframes penguinflyanim {
+    100% {    background-position-y: 108px  }
+}
+
+@keyframes penguinboostanim {
+    100% {    background-position-y: 108px  }
+}
+
+@keyframes penguinhurtanim {  
+    100% {    background-position-y: 216px  }
+}
+
+
+@keyframes background1scroll {
+    100% {    background-position-x: -336px;  }
+}
+
+@keyframes background2scroll {
+    100% {    background-position-x: -192px;  }
+}
+
+@keyframes background3scroll {
+    100% {    background-position-x: -192px; }
+}
+@keyframes backgroundxscroll {
+    100% {    background-position-x: -1800px; }
+}
+
+
+
+
+/* enmemy */
+
+
+.chicken-fly {
+    background: url(images/chickenfly.png);
+    width:72px;
+    height:72px;
+    z-index: 11;
+    animation: chickenfly 200ms steps(2) infinite;
+}
+@keyframes chickenfly { 
+    100% { background-position-y: 144px;} 
+}
+
+.chicken-hurt {
+    background: url(images/chickenhurt.png);
+    width:72px;
+    height:72px;
+    z-index: 11;
+    animation: none;
+} 
+
+
+/* explods */
+.player-death-explod{
+    background: url(images/bigexplosion.png);
+    width:456px;
+    height:380px;
+    z-index: 9;
+}
+
+/* weapon */
+
+.apple-shot {
+    background: url(images/apple.png);
+    width:36px;
+    height:36px;
+    z-index: 9;
+}
+
+
+
+/* hitbox stuff */
+.hurtbox {
+    background-color: rgba(0, 0, 255, 0.5); 
+    z-index: 20; 
+}
+
+.hitbox {
+    background-color: rgba(255, 0, 0, 0.5); 
+    z-index: 20; 
+}
+
+.doublebox {
+    background-color: rgba(255, 0, 255, 0.5); 
+    z-index: 20; 
+}
